@@ -25,15 +25,15 @@ function draw() {
 				var d = sqrt(dx*dx + dy*dy);
 				if (d < 1) d = 1;
 
-				var common = -0.01 * cos(d) / d;
+				var common = cos(d) / d;
 
 				ax += common * dx;
 				ay += common * dy;
 			}
 		}
 
-		vx[a] += ax;
-		vy[a] += ay;
+		vx[a] += ax * 0.01;
+		vy[a] += ay * 0.01;
 	}
 	
 	for (var a = 0; a < c; a++) {
